@@ -40,6 +40,7 @@ RUN sed -i 's/^DAEMON_USER=smokeping/DAEMON_USER=www-data/g' /etc/init.d/smokepi
   ln -s /etc/nginx/sites-available/smokeping /etc/nginx/sites-enabled/smokeping
 
 EXPOSE 80 443
+VOLUME /etc/smokeping /var/lib/smokeping
 
 ENTRYPOINT [ "/bin/sh","/entrypoint.sh" ]
 CMD ["/bin/sh","/start.sh"]
